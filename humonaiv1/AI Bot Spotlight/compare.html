@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare AI Bots</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Compare AI Bots</h1>
+        <a href="index.html">Back to Home</a>
+    </header>
+
+    <div id="comparison-container">
+        <h2>Comparison</h2>
+        <div id="comparison-table">
+            <!-- Comparison details will be dynamically added here -->
+        </div>
+    </div>
+
+    <script>
+        const apiUrl = 'https://example.com/api/bots'; // Replace with your API endpoint
+
+        // Function to fetch bot details and update comparison table
+        async function fetchComparisonData(botNames) {
+            try {
+                const comparisonContainer = document.getElementById('comparison-table');
+                comparisonContainer.innerHTML = ''; // Clear existing content
+                
+                const response = await fetch(apiUrl);
+                const bots = await response.json();
+                const selectedBots = bots.filter(bot => botNames.includes(bot.name));
+
+                if (selectedBots.length > 0) {
+                    let tableHtml = '<table><thead><tr>';
+                    tableHtml += '<th>Feature</th>';
+                    selectedBots.forEach(bot => {
+                        tableHtml += `<th>${bot.name}</th>`;
+                    });
+                    tableHtml += '</tr></thead><tbody>';
+
+                    const features = ['specs', 'abilities', 'features', 'ratings'];
+                    features.forEach(feature => {
+                        tableHtml += '<tr>';
+                        tableHtml += `<td>${capitalizeFirstLetter(feature)}</td>`;
+                        selectedBots.forEach(bot => {
+                            tableHtml += `<td>${formatFeature(bot[feature])}</td>`;
+                        });
+                        tableHtml += '</tr>';
+                    });
+
+                    tableHtml += '</tbody></table>';
+                    comparisonContainer.innerHTML = tableHtml;
+                } else {
+                    comparisonContainer.innerHTML = '<p>No bots selected for comparison.</p>';
+                }
+            } catch (error) {
+                console.error('Error fetching bot data:', error);
+            }
+        }
+
+        // Function to format feature data
+        function formatFeature(data) {
+            if (Array.isArray(data)) {
+                return data.join(', ');
+            }
+            return data;
+        }
+
+        // Function to capitalize the first letter of a string
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        // Get bot names from URL query parameters and fetch data
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return params.getAll('bot');
+        }
+
+        // Fetch and display comparison data on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const botNames = getQueryParams();
+            fetchComparisonData(botNames);
+        });
+    </script>
+</body>
+</html>
