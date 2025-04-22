@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Humonai</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components/header.css">
+  <link rel="stylesheet" href="../../assets/css/pages/v1.css">
+  <link rel="stylesheet" href="../../assets/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="../index.html" class="logo-container">
+        <img src="../../assets/images/logos/logo.jpg" alt="Humonai Logo" class="logo">
+        <h1 class="title">Humonai</h1>
+      </a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="courses.html">Courses</a></li>
+        </ul>
+      </nav>
+      <div class="header-icons">
+        <div class="search-bar">
+          <input type="text" placeholder="Search..." id="search">
+          <button type="button"><i class="fas fa-search"></i></button>
+        </div>
+        <i class="fas fa-bell"></i>
+        <i class="fas fa-user" onclick="toggleProfileMenu()"></i>
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+        <i class="fas fa-bars burger-menu" onclick="openSidebar()"></i>
+      </div>
+    </div>
+    <div id="profileMenu" class="profile-menu">
+      <!-- Profile Form -->
+      <form id="profileForm" class="profile-form">
+        <span class="close" onclick="closeForm()">&times;</span>
+        <img src="../../assets/images/logos/logo.jpg" alt="Avatar" class="avatar">
+        <p>Humonai</p>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button>Log In</button>
+        <div class="social">
+          <div class="go"><i class="fab fa-google"></i> Google</div>
+          <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
+        </div>
+      </form>
+    </div>
+  </header>
+
+  <div id="sidebar" class="sidebar">
+    <div class="closebtn">&times;</div>
+    <div class="sidebar-content">
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+      <a href="services.html">Services</a>
+      <a href="courses.html">Courses</a>
+    </div>
+  </div>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <h1 class="hero-title">Master AI to Boost Your Productivity</h1>
+      <p class="hero-subtitle">Learn how to leverage AI chat GPT effectively through our expert-led courses to optimize your work outcomes and significantly boost productivity.</p>
+      <a href="#courses" class="cta-button">Explore Courses</a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+    <section class="content-section">
+      <article class="article tech-articles">
+        <div class="article-content">
+          <h2>Tech Articles</h2>
+          <p>Explore a broad range of topics related to technology, including reviews of the latest gadgets,
+            discussions on emerging trends in the tech industry, tutorials on how to use different software or
+            devices, and analyses of technological advancements.</p>
+          <a href="../tech-articles/index.html" class="learn-more">Learn More</a>
+        </div>
+      </article>
+
+      <article class="article ai-spotlight">
+        <div class="article-content">
+          <h2>AI Bot Spotlight</h2>
+          <p>Explore new releases, cutting-edge features, and advancements in artificial intelligence-driven virtual
+            assistants. Get insights, reviews, and direct links to explore these exciting additions to the AI
+            landscape.</p>
+          <a href="../ai-bots/index.html" class="learn-more">Learn More</a>
+        </div>
+      </article>
+
+      <article class="article tech-innovations">
+        <div class="article-content">
+          <h2>Tech Innovations & AI Advancements</h2>
+          <p>Explore new AI technologies, breakthroughs, and their applications across various sectors. Stay updated
+            with the intersection of AI and tech, featuring in-depth analyses, reviews, and links to explore these
+            cutting-edge developments further.</p>
+          <a href="#" class="learn-more">Learn More</a>
+        </div>
+      </article>
+
+      <aside>
+        <section>
+          <h2>Transportation</h2>
+          <p>VCs and the military are fueling self-driving startups that don't need roads</p>
+          <p>Rebecca Bellan</p>
+        </section>
+        <section>
+          <h2>AI</h2>
+          <p>ChatGPT's mobile app revenue saw its biggest spike yet following GPT-4o launch</p>
+          <p>Sarah Perez</p>
+        </section>
+        <section>
+          <h2>Security</h2>
+          <p>CyberArk snaps up Venafi for $1.54B to ramp up in machine-to-machine security</p>
+          <p>Ingrid Lunden</p>
+        </section>
+        <section>
+          <h2>Social</h2>
+          <p>Bumble buys community building app Geneva to expand further into friendships</p>
+          <p>Paul Sawers</p>
+        </section>
+      </aside>
+    </section>
+  </div>
+
+  <!-- Feature Cards Section -->
+  <section class="feature-cards" id="courses">
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-robot"></i>
+      </div>
+      <div class="feature-content">
+        <h3 class="feature-title">AI Chat Fundamentals</h3>
+        <p class="feature-text">Master the basics of using AI chat systems effectively. Learn prompt engineering, context management, and best practices for productive interactions.</p>
+        <a href="#" class="learn-more">View Course</a>
+      </div>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-briefcase"></i>
+      </div>
+      <div class="feature-content">
+        <h3 class="feature-title">AI for Business</h3>
+        <p class="feature-text">Discover how to implement AI chat systems in your business workflow. Increase efficiency and streamline tasks across departments.</p>
+        <a href="#" class="learn-more">View Course</a>
+      </div>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-code"></i>
+      </div>
+      <div class="feature-content">
+        <h3 class="feature-title">AI for Developers</h3>
+        <p class="feature-text">Learn how to integrate AI assistants into your development workflow to write better code, debug faster, and increase productivity.</p>
+        <a href="#" class="learn-more">View Course</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="testimonials-container">
+      <div class="testimonials-heading">
+        <h2>What Our Students Say</h2>
+        <p>Hear from professionals who have transformed their workflow with our AI productivity courses</p>
+      </div>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">The AI Chat Fundamentals course completely changed how I approach my daily tasks. I'm saving at least 10 hours every week on routine writing and research.</p>
+          <div class="testimonial-author">
+            <img src="../../assets/images/logos/logo.jpg" alt="User" />
+            <div class="author-info">
+              <h4>Alex Johnson</h4>
+              <p>Marketing Manager</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-text">As a developer, the AI for Developers course helped me automate documentation and testing. My productivity increased by nearly 40% within the first month.</p>
+          <div class="testimonial-author">
+            <img src="../../assets/images/logos/logo.jpg" alt="User" />
+            <div class="author-info">
+              <h4>Samantha Lee</h4>
+              <p>Software Engineer</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-text">Our entire team took the AI for Business course, and it transformed our operations. Customer response times are down 60%, and satisfaction is up 25%.</p>
+          <div class="testimonial-author">
+            <img src="../../assets/images/logos/logo.jpg" alt="User" />
+            <div class="author-info">
+              <h4>Michael Chen</h4>
+              <p>Operations Director</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Call-to-Action Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-heading">Ready to Transform Your Productivity?</h2>
+      <p class="cta-text">Join thousands of professionals who have accelerated their careers by mastering AI tools with our expert-led courses.</p>
+      <div class="cta-buttons">
+        <a href="#courses" class="cta-btn cta-btn-primary">Browse Courses</a>
+        <a href="#" class="cta-btn cta-btn-secondary">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="searchResults" class="search-results"></div>
+  <div id="pagination" class="pagination"></div>
+
+  <footer class="footer">
+    <a href="#" class="logo">
+      <span>Humonai</span>
+    </a>
+    <p class="contact">© 2024 Humonai <br>
+      <a href="mailto:humonai.contact@gmail.com">humonai.contact@gmail.com</a>
+    </p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=61556809245741" target="_blank">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+          viewBox="0 0 24 24">
+          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z">
+          </path>
+        </svg>
+      </a>
+      <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" target="_blank">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+          viewBox="0 0 24 24">
+          <path
+            d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+          </path>
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61556809245741" target="_blank">
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          class="w-5 h-5" viewBox="0 0 24 24">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5">
+          </rect>
+          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01">
+          </path>
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61556809245741" target="_blank">
+        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"
+          class="w-5 h-5" viewBox="0 0 24 24">
+          <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+          </path>
+          <circle cx="4" cy="4" r="2" stroke="none">
+          </circle>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleProfileMenu() {
+      const profileMenu = document.getElementById('profileMenu');
+      profileMenu.style.display = profileMenu.style.display === 'block' ? 'none' : 'block';
+    }
+  
+    function closeForm() {
+      document.getElementById('profileMenu').style.display = 'none';
+    }
+  
+    document.addEventListener('click', function(event) {
+      const profileMenu = document.getElementById('profileMenu');
+      const isClickInside = profileMenu.contains(event.target) || event.target.matches('.fas.fa-user');
+  
+      if (!isClickInside) {
+        profileMenu.style.display = 'none';
+      }
+    });
+  </script>
+  <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,410 @@
+/* Enhanced Form Components */
+
+/* Base Form Styles */
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.dark-mode label {
+  color: var(--dark-text);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.dark-mode input[type="text"],
+.dark-mode input[type="email"],
+.dark-mode input[type="password"],
+.dark-mode input[type="search"],
+.dark-mode input[type="tel"],
+.dark-mode input[type="url"],
+.dark-mode input[type="number"],
+.dark-mode textarea,
+.dark-mode select {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--dark-text);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(74, 111, 226, 0.2);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Form with floating labels */
+.form-floating {
+  position: relative;
+}
+
+.form-floating label {
+  position: absolute;
+  top: 0.8rem;
+  left: 1rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transform-origin: left top;
+  background-color: transparent;
+  padding: 0 0.2rem;
+  margin: 0;
+  color: #888;
+}
+
+.form-floating input:focus ~ label,
+.form-floating input:not(:placeholder-shown) ~ label,
+.form-floating textarea:focus ~ label,
+.form-floating textarea:not(:placeholder-shown) ~ label {
+  transform: translateY(-1.4rem) scale(0.8);
+  color: var(--primary-color);
+}
+
+.form-floating input:focus,
+.form-floating textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(74, 111, 226, 0.2);
+}
+
+.form-floating input:focus::placeholder,
+.form-floating textarea:focus::placeholder {
+  color: transparent;
+}
+
+/* Form with underlined inputs */
+.form-underlined input[type="text"],
+.form-underlined input[type="email"],
+.form-underlined input[type="password"],
+.form-underlined input[type="search"],
+.form-underlined input[type="tel"],
+.form-underlined input[type="url"],
+.form-underlined input[type="number"],
+.form-underlined textarea,
+.form-underlined select {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  padding: 0.8rem 0;
+}
+
+.dark-mode .form-underlined input[type="text"],
+.dark-mode .form-underlined input[type="email"],
+.dark-mode .form-underlined input[type="password"],
+.dark-mode .form-underlined input[type="search"],
+.dark-mode .form-underlined input[type="tel"],
+.dark-mode .form-underlined input[type="url"],
+.dark-mode .form-underlined input[type="number"],
+.dark-mode .form-underlined textarea,
+.dark-mode .form-underlined select {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-underlined input:focus,
+.form-underlined textarea:focus,
+.form-underlined select:focus {
+  border-bottom-color: var(--primary-color);
+  box-shadow: none;
+}
+
+/* Checkbox and Radio Buttons */
+.form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.form-check input[type="checkbox"],
+.form-check input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: var(--accent-color);
+  margin-right: 0.7rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.form-check input[type="radio"] + .checkmark {
+  border-radius: 50%;
+}
+
+.dark-mode .checkmark {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-check:hover input ~ .checkmark {
+  background-color: rgba(74, 111, 226, 0.1);
+}
+
+.form-check input:checked ~ .checkmark {
+  background-color: var(--primary-color);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.form-check input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.form-check .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.form-check input[type="radio"] + .checkmark:after {
+  left: 6px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  transform: none;
+}
+
+.form-check-label {
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+/* Form Validation Styles */
+.form-group.error input,
+.form-group.error textarea,
+.form-group.error select {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.form-group.error label {
+  color: #e74c3c;
+}
+
+.error-message {
+  display: block;
+  color: #e74c3c;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  transform: translateY(0);
+  transition: all 0.2s ease;
+}
+
+.form-group:not(.error) .error-message {
+  height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Form Success Styles */
+.form-group.success input,
+.form-group.success textarea,
+.form-group.success select {
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.1);
+}
+
+.success-message {
+  color: #2ecc71;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Search Form */
+.search-form {
+  display: flex;
+  align-items: center;
+  background-color: var(--accent-color);
+  border-radius: 30px;
+  padding: 0.3rem 0.6rem;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  max-width: 100%;
+}
+
+.dark-mode .search-form {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.search-form:focus-within {
+  box-shadow: 0 0 0 3px rgba(74, 111, 226, 0.2);
+  border-color: var(--primary-color);
+}
+
+.search-form input {
+  border: none;
+  background: transparent;
+  padding: 0.5rem 0.8rem;
+  width: 100%;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  outline: none;
+}
+
+.dark-mode .search-form input {
+  color: var(--dark-text);
+}
+
+.search-form button {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  padding: 0.5rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.dark-mode .search-form button {
+  color: var(--dark-text);
+}
+
+.search-form button:hover {
+  opacity: 1;
+}
+
+/* Contact Form */
+.contact-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.dark-mode .contact-form {
+  background-color: var(--dark-accent);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form .form-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.dark-mode .contact-form .form-title {
+  color: var(--light-text);
+}
+
+.form-submit-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(74, 111, 226, 0.4);
+}
+
+/* Newsletter Form */
+.newsletter-form {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-form input {
+  flex-grow: 1;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
+.newsletter-form button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 0 1.5rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+  box-shadow: 0 4px 10px rgba(74, 111, 226, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 1.5rem;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .newsletter-form input {
+    border-radius: 8px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+  
+  .newsletter-form button {
+    border-radius: 8px;
+  }
+}

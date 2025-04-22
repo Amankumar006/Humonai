@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="800px" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="techGradient">
+      <stop stop-color="#FFFFFF" stop-opacity="0.3" offset="0%"></stop>
+      <stop stop-color="#FFFFFF" stop-opacity="0.05" offset="100%"></stop>
+    </linearGradient>
+  </defs>
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <!-- Tech pattern - circuit board style elements -->
+    <!-- Horizontal lines -->
+    <path d="M100,100 L700,100" stroke="url(#techGradient)" stroke-width="1" opacity="0.5"></path>
+    <path d="M100,200 L700,200" stroke="url(#techGradient)" stroke-width="1" opacity="0.3"></path>
+    <path d="M100,300 L700,300" stroke="url(#techGradient)" stroke-width="1" opacity="0.4"></path>
+    <path d="M100,400 L700,400" stroke="url(#techGradient)" stroke-width="1" opacity="0.6"></path>
+    <path d="M100,500 L700,500" stroke="url(#techGradient)" stroke-width="1" opacity="0.2"></path>
+    <path d="M100,600 L700,600" stroke="url(#techGradient)" stroke-width="1" opacity="0.5"></path>
+    <path d="M100,700 L700,700" stroke="url(#techGradient)" stroke-width="1" opacity="0.3"></path>
+    
+    <!-- Vertical lines -->
+    <path d="M100,100 L100,700" stroke="url(#techGradient)" stroke-width="1" opacity="0.4"></path>
+    <path d="M200,100 L200,700" stroke="url(#techGradient)" stroke-width="1" opacity="0.2"></path>
+    <path d="M300,100 L300,700" stroke="url(#techGradient)" stroke-width="1" opacity="0.5"></path>
+    <path d="M400,100 L400,700" stroke="url(#techGradient)" stroke-width="1" opacity="0.6"></path>
+    <path d="M500,100 L500,700" stroke="url(#techGradient)" stroke-width="1" opacity="0.3"></path>
+    <path d="M600,100 L600,700" stroke="url(#techGradient)" stroke-width="1" opacity="0.4"></path>
+    <path d="M700,100 L700,700" stroke="url(#techGradient)" stroke-width="1" opacity="0.2"></path>
+    
+    <!-- Circles at intersections -->
+    <circle cx="100" cy="100" r="4" fill="url(#techGradient)" opacity="0.7"></circle>
+    <circle cx="100" cy="200" r="2" fill="url(#techGradient)" opacity="0.5"></circle>
+    <circle cx="100" cy="300" r="3" fill="url(#techGradient)" opacity="0.6"></circle>
+    <circle cx="100" cy="400" r="2" fill="url(#techGradient)" opacity="0.4"></circle>
+    <circle cx="100" cy="500" r="4" fill="url(#techGradient)" opacity="0.7"></circle>
+    <circle cx="100" cy="600" r="2" fill="url(#techGradient)" opacity="0.5"></circle>
+    <circle cx="100" cy="700" r="3" fill="url(#techGradient)" opacity="0.6"></circle>
+    
+    <circle cx="200" cy="100" r="2" fill="url(#techGradient)" opacity="0.5"></circle>
+    <circle cx="200" cy="200" r="3" fill="url(#techGradient)" opacity="0.6"></circle>
+    <circle cx="200" cy="300" r="2" fill="url(#techGradient)" opacity="0.4"></circle>
+    <circle cx="200" cy="400" r="4" fill="url(#techGradient)" opacity="0.7"></circle>
+    <circle cx="200" cy="500" r="2" fill="url(#techGradient)" opacity="0.5"></circle>
+    <circle cx="200" cy="600" r="3" fill="url(#techGradient)" opacity="0.6"></circle>
+    <circle cx="200" cy="700" r="2" fill="url(#techGradient)" opacity="0.4"></circle>
+    
+    <!-- Binary elements -->
+    <text x="120" y="120" font-family="monospace" font-size="12" fill="url(#techGradient)" opacity="0.7">01</text>
+    <text x="320" y="220" font-family="monospace" font-size="12" fill="url(#techGradient)" opacity="0.5">10</text>
+    <text x="520" y="320" font-family="monospace" font-size="12" fill="url(#techGradient)" opacity="0.6">11</text>
+    <text x="150" y="420" font-family="monospace" font-size="12" fill="url(#techGradient)" opacity="0.4">00</text>
+    <text x="350" y="520" font-family="monospace" font-size="12" fill="url(#techGradient)" opacity="0.7">01</text>
+    <text x="550" y="620" font-family="monospace" font-size="12" fill="url(#techGradient)" opacity="0.5">10</text>
+    
+    <!-- Diagonal connections -->
+    <path d="M100,100 L180,180" stroke="url(#techGradient)" stroke-width="1" opacity="0.4"></path>
+    <path d="M300,200 L380,280" stroke="url(#techGradient)" stroke-width="1" opacity="0.3"></path>
+    <path d="M500,300 L580,380" stroke="url(#techGradient)" stroke-width="1" opacity="0.5"></path>
+    <path d="M200,500 L280,580" stroke="url(#techGradient)" stroke-width="1" opacity="0.6"></path>
+    <path d="M400,600 L480,680" stroke="url(#techGradient)" stroke-width="1" opacity="0.4"></path>
+    
+    <!-- Component shapes -->
+    <rect x="250" y="150" width="30" height="30" stroke="url(#techGradient)" stroke-width="1" opacity="0.5"></rect>
+    <rect x="450" y="350" width="30" height="30" stroke="url(#techGradient)" stroke-width="1" opacity="0.6"></rect>
+    <rect x="650" y="550" width="30" height="30" stroke="url(#techGradient)" stroke-width="1" opacity="0.4"></rect>
+    
+    <circle cx="350" cy="250" r="15" stroke="url(#techGradient)" stroke-width="1" opacity="0.5" fill="none"></circle>
+    <circle cx="550" cy="450" r="15" stroke="url(#techGradient)" stroke-width="1" opacity="0.6" fill="none"></circle>
+    <circle cx="250" cy="650" r="15" stroke="url(#techGradient)" stroke-width="1" opacity="0.4" fill="none"></circle>
+    
+    <!-- Tech symbols -->
+    <path d="M420,170 L430,170 L430,160 L440,160 L440,170 L450,170 L450,180 L440,180 L440,190 L430,190 L430,180 L420,180 Z" fill="url(#techGradient)" opacity="0.5"></path>
+    <path d="M620,370 L630,370 L630,360 L640,360 L640,370 L650,370 L650,380 L640,380 L640,390 L630,390 L630,380 L620,380 Z" fill="url(#techGradient)" opacity="0.6"></path>
+    <path d="M320,570 L330,570 L330,560 L340,560 L340,570 L350,570 L350,580 L340,580 L340,590 L330,590 L330,580 L320,580 Z" fill="url(#techGradient)" opacity="0.4"></path>
+  </g>
+</svg>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Humonai</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/components/header.css">
+  <link rel="stylesheet" href="../../assets/css/components/footer.css">
+  <link rel="stylesheet" href="../../assets/css/components/cards.css">
+  <link rel="stylesheet" href="../../assets/css/pages/tech-articles.css">
+  <link rel="stylesheet" href="../../assets/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="../index.html" class="logo-container">
+        <img src="../../assets/images/logos/logo.jpg" alt="Humonai Logo" class="logo">
+        <h1 class="title">Humonai</h1>
+      </a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="courses.html">Courses</a></li>
+        </ul>
+      </nav>
+      <div class="header-icons">
+        <div class="search-bar">
+          <input type="text" placeholder="Search..." id="search">
+          <button type="button"><i class="fas fa-search"></i></button>
+        </div>
+        <i class="fas fa-bell"></i>
+        <i class="fas fa-user" onclick="toggleProfileMenu()"></i>
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+        <i class="fas fa-bars burger-menu" onclick="openSidebar()"></i>
+      </div>
+    </div>
+    <div id="profileMenu" class="profile-menu">
+      <!-- Profile Form -->
+      <form id="profileForm" class="profile-form">
+        <span class="close" onclick="closeForm()">&times;</span>
+        <img src="../../assets/images/logos/logo.jpg" alt="Avatar" class="avatar">
+        <p>Humonai</p>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button>Log In</button>
+        <div class="social">
+          <div class="go"><i class="fab fa-google"></i> Google</div>
+          <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
+        </div>
+      </form>
+    </div>
+  </header>
+
+  <div id="sidebar" class="sidebar">
+    <div class="closebtn">&times;</div>
+    <div class="sidebar-content">
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+      <a href="services.html">Services</a>
+      <a href="courses.html">Courses</a>
+    </div>
+  </div>
+
+  <div id="searchResults" class="search-results"></div>
+  <div id="pagination" class="pagination"></div>
+
+  <div class="sidebar-overlay"></div>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <h1 class="hero-title">Tech Articles</h1>
+      <p class="hero-subtitle">Explore a broad range of topics related to technology, including reviews of the latest gadgets, discussions on emerging trends in the tech industry, and analyses of technological advancements.</p>
+    </div>
+  </section>
+
+  <div class="main-content">
+    <div class="container">
+      <!-- Category Navigation -->
+      <div class="category-nav">
+        <h3 class="category-title">Categories</h3>
+        <ul class="category-list">
+          <li class="category-item"><a href="#hardware" class="category-link active">Hardware</a></li>
+          <li class="category-item"><a href="#software" class="category-link">Software</a></li>
+          <li class="category-item"><a href="#networking" class="category-link">Networking</a></li>
+          <li class="category-item"><a href="#internet" class="category-link">Internet</a></li>
+          <li class="category-item"><a href="#ai" class="category-link">Artificial Intelligence</a></li>
+          <li class="category-item"><a href="#cybersecurity" class="category-link">Cybersecurity</a></li>
+          <li class="category-item"><a href="#cloud" class="category-link">Cloud Computing</a></li>
+          <li class="category-item"><a href="#blockchain" class="category-link">Blockchain</a></li>
+          <li class="category-item"><a href="#vr" class="category-link">Virtual Reality</a></li>
+          <li class="category-item"><a href="#iot" class="category-link">Internet of Things (IoT)</a></li>
+        </ul>
+      </div>
+
+      <main class="article-layout">
+        <!-- Featured Articles Carousel -->
+        <section class="featured-section">
+          <h2 class="section-title">Featured Articles</h2>
+          <div class="carousel">
+            <div class="slides">
+              <div class="slide active">
+                <img src="../../assets/images/backgrounds/bots-bg.jpeg" alt="Tech Innovations & AI Advancements" class="slide-image">
+                <div class="slide-content">
+                  <span class="slide-tag">AI</span>
+                  <h3 class="slide-title">Tech Innovations & AI Advancements in 2025</h3>
+                  <p class="slide-description">Exploring the cutting-edge developments shaping our technological future</p>
+                  <a href="#" class="slide-button">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="../../assets/images/backgrounds/v1background.jpeg" alt="The Future of Cloud Computing" class="slide-image">
+                <div class="slide-content">
+                  <span class="slide-tag">Cloud</span>
+                  <h3 class="slide-title">The Future of Cloud Computing: Trends to Watch</h3>
+                  <p class="slide-description">How distributed cloud architecture is transforming business operations</p>
+                  <a href="#" class="slide-button">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="../../assets/images/bots/techarticle.jpg" alt="Cybersecurity in the Age of AI" class="slide-image">
+                <div class="slide-content">
+                  <span class="slide-tag">Security</span>
+                  <h3 class="slide-title">Cybersecurity in the Age of AI: New Threats and Defenses</h3>
+                  <p class="slide-description">How organizations are adapting to AI-powered security challenges</p>
+                  <a href="#" class="slide-button">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-arrow prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-arrow next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-dots">
+              <span class="dot active" data-slide="0"></span>
+              <span class="dot" data-slide="1"></span>
+              <span class="dot" data-slide="2"></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Latest Articles Grid -->
+        <section class="latest-articles">
+          <div class="section-header">
+            <h2 class="section-title">Latest Articles</h2>
+            <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+          </div>
+          
+          <div class="card-grid">
+            <!-- Article Card 1 -->
+            <article class="article-card">
+              <div class="article-image">
+                <img src="../../assets/images/ai-services/google bert.jpeg" alt="ChatGPT Revenue Spike">
+              </div>
+              <div class="article-content">
+                <span class="article-tag">AI</span>
+                <h3 class="article-title">ChatGPT's mobile app revenue saw its biggest spike yet following GPT-4o launch</h3>
+                <p class="article-excerpt">How the latest LLM model is driving unprecedented growth in AI app subscriptions and what this means for the industry.</p>
+                <div class="article-meta">
+                  <div class="article-author">
+                    <img src="../../assets/images/logos/logo.jpg" alt="Sarah Perez">
+                    <span>Sarah Perez</span>
+                  </div>
+                  <div class="article-date">
+                    <i class="far fa-calendar"></i>
+                    <span>April 18, 2025</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Article Card 2 -->
+            <article class="article-card">
+              <div class="article-image">
+                <img src="../../assets/images/ai-services/Automation Anywhere.jpeg" alt="Self-driving Startups">
+              </div>
+              <div class="article-content">
+                <span class="article-tag">Transportation</span>
+                <h3 class="article-title">VCs and the military are fueling self-driving startups that don't need roads</h3>
+                <p class="article-excerpt">The emergence of all-terrain autonomous vehicles is creating new opportunities in defense, agriculture, and exploration.</p>
+                <div class="article-meta">
+                  <div class="article-author">
+                    <img src="../../assets/images/logos/logo.jpg" alt="Rebecca Bellan">
+                    <span>Rebecca Bellan</span>
+                  </div>
+                  <div class="article-date">
+                    <i class="far fa-calendar"></i>
+                    <span>April 15, 2025</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Article Card 3 -->
+            <article class="article-card">
+              <div class="article-image">
+                <img src="../../assets/images/ai-services/clarifai.jpeg" alt="Machine-to-Machine Security">
+              </div>
+              <div class="article-content">
+                <span class="article-tag">Security</span>
+                <h3 class="article-title">CyberArk snaps up Venafi for $1.54B to ramp up in machine-to-machine security</h3>
+                <p class="article-excerpt">With the proliferation of IoT devices, securing machine-to-machine communication has become a critical cybersecurity frontier.</p>
+                <div class="article-meta">
+                  <div class="article-author">
+                    <img src="../../assets/images/logos/logo.jpg" alt="Ingrid Lunden">
+                    <span>Ingrid Lunden</span>
+                  </div>
+                  <div class="article-date">
+                    <i class="far fa-calendar"></i>
+                    <span>April 12, 2025</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Article Card 4 -->
+            <article class="article-card">
+              <div class="article-image">
+                <img src="../../assets/images/ai-services/IBM Waston.jpeg" alt="Community Building App">
+              </div>
+              <div class="article-content">
+                <span class="article-tag">Social</span>
+                <h3 class="article-title">Bumble buys community building app Geneva to expand further into friendships</h3>
+                <p class="article-excerpt">The dating app giant is diversifying its offerings to capture the growing market for platonic connection in a digital world.</p>
+                <div class="article-meta">
+                  <div class="article-author">
+                    <img src="../../assets/images/logos/logo.jpg" alt="Paul Sawers">
+                    <span>Paul Sawers</span>
+                  </div>
+                  <div class="article-date">
+                    <i class="far fa-calendar"></i>
+                    <span>April 10, 2025</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        
+        <!-- Popular Topics Section -->
+        <section class="popular-topics">
+          <h2 class="section-title">Popular Topics</h2>
+          <div class="topics-grid">
+            <a href="#ai" class="topic-card">
+              <i class="fas fa-robot"></i>
+              <h3>Artificial Intelligence</h3>
+            </a>
+            <a href="#cloud" class="topic-card">
+              <i class="fas fa-cloud"></i>
+              <h3>Cloud Computing</h3>
+            </a>
+            <a href="#cybersecurity" class="topic-card">
+              <i class="fas fa-shield-alt"></i>
+              <h3>Cybersecurity</h3>
+            </a>
+            <a href="#blockchain" class="topic-card">
+              <i class="fas fa-link"></i>
+              <h3>Blockchain</h3>
+            </a>
+            <a href="#iot" class="topic-card">
+              <i class="fas fa-wifi"></i>
+              <h3>Internet of Things</h3>
+            </a>
+            <a href="#vr" class="topic-card">
+              <i class="fas fa-vr-cardboard"></i>
+              <h3>Virtual Reality</h3>
+            </a>
+          </div>
+        </section>
+      </main>
+      
+      <!-- Newsletter Section -->
+      <section class="newsletter-section">
+        <div class="newsletter-content">
+          <h2>Stay Updated</h2>
+          <p>Subscribe to our newsletter for the latest tech articles and updates delivered directly to your inbox.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="../index.html" class="footer-logo">
+          <img src="../../assets/images/logos/logo.jpg" alt="Humonai Logo">
+          <span class="footer-logo-text">Humonai</span>
+        </a>
+        <p class="footer-about">Humonai offers courses on AI tools for enhanced productivity and educational resources on the latest technology trends.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=61556809245741" target="_blank" class="footer-social-link">
+            <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+            </svg>
+          </a>
+          <a href="https://twitter.com/knyttneve" target="_blank" class="footer-social-link">
+            <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" class="footer-social-link">
+            <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" class="footer-social-link">
+            <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <h3 class="footer-links-title">Quick Links</h3>
+        <ul class="footer-links-list">
+          <li class="footer-links-item"><a href="../index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+          <li class="footer-links-item"><a href="../about.html"><i class="fas fa-chevron-right"></i> About</a></li>
+          <li class="footer-links-item"><a href="../v1/index.html"><i class="fas fa-chevron-right"></i> Humonai V1</a></li>
+          <li class="footer-links-item"><a href="../ai-bots/index.html"><i class="fas fa-chevron-right"></i> AI Bots</a></li>
+          <li class="footer-links-item"><a href="#"><i class="fas fa-chevron-right"></i> Tech Articles</a></li>
+          <li class="footer-links-item"><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+          <li class="footer-links-item"><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-contact">
+        <h3 class="footer-contact-title">Contact Us</h3>
+        <div class="footer-contact-item">
+          <i class="fas fa-envelope footer-contact-icon"></i>
+          <div class="footer-contact-text">
+            <a href="mailto:humonai.contact@gmail.com" class="footer-contact-link">humonai.contact@gmail.com</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-map-marker-alt footer-contact-icon"></i>
+          <div class="footer-contact-text">
+            123 Innovation Street<br>
+            Tech Valley, CA 94043<br>
+            United States
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone-alt footer-contact-icon"></i>
+          <div class="footer-contact-text">
+            <a href="tel:+11234567890" class="footer-contact-link">+1 (123) 456-7890</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-newsletter">
+        <h3 class="footer-newsletter-title">Newsletter</h3>
+        <p class="footer-newsletter-text">Subscribe to our newsletter for the latest updates on AI tools, tech articles, and productivity tips.</p>
+        <form class="footer-newsletter-form">
+          <input type="email" placeholder="Your email address" class="footer-newsletter-input" required>
+          <button type="submit" class="footer-newsletter-button"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Humonai. All rights reserved. | Designed with <i class="fas fa-heart"></i> by Humonai</p>
+    </div>
+  </footer>
+  </div>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    // Initialize carousel functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel .slide');
+    const dots = document.querySelectorAll('.carousel-dots .dot');
+    const totalSlides = slides.length;
+    let slideInterval;
+    
+    // Start automatic slideshow
+    function startSlideShow() {
+      slideInterval = setInterval(() => {
+        moveToSlide((currentSlide + 1) % totalSlides);
+      }, 5000);
+    }
+    
+    // Stop slideshow (for interaction)
+    function stopSlideShow() {
+      clearInterval(slideInterval);
+    }
+    
+    // Move to specific slide
+    function moveToSlide(slideIndex) {
+      slides[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('active');
+      
+      currentSlide = slideIndex;
+      
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+    
+    // Set up event listeners
+    document.querySelector('.carousel .prev').addEventListener('click', () => {
+      stopSlideShow();
+      moveToSlide((currentSlide - 1 + totalSlides) % totalSlides);
+      startSlideShow();
+    });
+    
+    document.querySelector('.carousel .next').addEventListener('click', () => {
+      stopSlideShow();
+      moveToSlide((currentSlide + 1) % totalSlides);
+      startSlideShow();
+    });
+    
+    // Add click event for dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        stopSlideShow();
+        moveToSlide(index);
+        startSlideShow();
+      });
+    });
+    
+    // Add hover events to stop/start carousel on mouse enter/leave
+    const carousel = document.querySelector('.carousel');
+    carousel.addEventListener('mouseenter', stopSlideShow);
+    carousel.addEventListener('mouseleave', startSlideShow);
+    
+    // Start slideshow when page loads
+    startSlideShow();
+    
+    // Category navigation
+    const categoryLinks = document.querySelectorAll('.category-link');
+    categoryLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Remove active class from all links
+        categoryLinks.forEach(l => l.classList.remove('active'));
+        
+        // Add active class to clicked link
+        this.classList.add('active');
+        
+        // Here you would typically load content based on category
+        const category = this.getAttribute('href').substring(1);
+        console.log(`Loading content for category: ${category}`);
+      });
+    });
+  
+    // Profile menu handling
+    function toggleProfileMenu() {
+      const profileMenu = document.getElementById('profileMenu');
+      profileMenu.style.display = profileMenu.style.display === 'block' ? 'none' : 'block';
+    }
+  
+    function closeForm() {
+      document.getElementById('profileMenu').style.display = 'none';
+    }
+  
+    document.addEventListener('click', function(event) {
+      const profileMenu = document.getElementById('profileMenu');
+      const isClickInside = profileMenu.contains(event.target) || event.target.matches('.fas.fa-user');
+      
+      if (!isClickInside) {
+        profileMenu.style.display = 'none';
+      }
+    });
+  </script>
+  <script src="../../assets/js/components/darkMode.js"></script>
+</body>
+
+</html>
